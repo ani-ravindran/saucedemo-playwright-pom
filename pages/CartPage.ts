@@ -30,4 +30,8 @@ export class CartPage extends BasePage {
   const item = this.cartItems.filter({ hasText: productName });
   await item.getByRole('button', { name: 'Remove' }).click();
 }
+
+  async checkout() {
+  await this.page.getByTestId('checkout').click();
+}
 }
